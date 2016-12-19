@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "943436160890",
+    "firebase_url": "https://roostersrestaurant-e58e6.firebaseio.com",
+    "project_id": "roostersrestaurant-e58e6",
+    "storage_bucket": "roostersrestaurant-e58e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943436160890:android:7f0efcab6391b7ce",
+        "android_client_info": {
+          "package_name": "com.roostersdining.roostersrestaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943436160890-7mi2vpmtutm6ukv1pb1q58tgacjt0fk5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.roostersdining.roostersrestaurant",
+            "certificate_hash": "963FF5F898E8C418D61B036574AA59BDC41F35FD"
+          }
+        },
+        {
+          "client_id": "943436160890-bcuo4frcg4vuh2nm00qapk1gijca5vrc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqQ88VXFfBiAHC2vw3hRyWcdB2R2D3who"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943436160890-bcuo4frcg4vuh2nm00qapk1gijca5vrc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

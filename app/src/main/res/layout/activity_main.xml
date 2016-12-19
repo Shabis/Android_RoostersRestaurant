@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#212121"
-    tools:context="com.roostersdining.roostersrestaurant.MainActivity">
+    tools:context="com.roostersdining.roostersrestaurant.ui.MainActivity"
+    android:background="#000000">
 
     <ImageView
         android:layout_width="match_parent"
@@ -13,5 +12,64 @@
         android:id="@+id/imageView"
         android:src="@drawable/roostercup"
         android:scaleType="centerCrop" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="VIEW ORDERS"
+        android:id="@+id/viewOrdersButton"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorTextIcons"
+        android:layout_below="@+id/placeOrderButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="TABLE MAP"
+        android:id="@+id/tableMapButton"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorTextIcons"
+        android:layout_below="@+id/viewOrdersButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="WAITING LIST"
+        android:id="@+id/waitingListButton"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorTextIcons"
+        android:layout_below="@+id/tableMapButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="EMPLOYEE DIRECTORY"
+        android:id="@+id/employeeDirectoryButton"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorTextIcons"
+        android:layout_below="@+id/waitingListButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="PLACE ORDER"
+        android:id="@+id/placeOrderButton"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorTextIcons"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
