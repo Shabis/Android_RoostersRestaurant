@@ -13,11 +13,11 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    @Bind(R.id.placeOrderButton) Button placeOrderButton;
-    @Bind(R.id.viewOrdersButton) Button viewOrderButton;
-    @Bind(R.id.tableMapButton) Button tableMapButton;
-    @Bind(R.id.waitingListButton) Button waitingListButton;
-    @Bind(R.id.employeeDirectoryButton) Button employeeDirectoryButton;
+    @Bind(R.id.placeOrderButton) Button mPlaceOrderButton;
+    @Bind(R.id.viewOrdersButton) Button mViewOrderButton;
+    @Bind(R.id.tableMapButton) Button mTableMapButton;
+    @Bind(R.id.waitingListButton) Button mWaitingListButton;
+    @Bind(R.id.employeeDirectoryButton) Button mEmployeeDirectoryButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,25 +25,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        placeOrderButton.setOnClickListener(this);
-        viewOrderButton.setOnClickListener(this);
-        tableMapButton.setOnClickListener(this);
-        waitingListButton.setOnClickListener(this);
-        employeeDirectoryButton.setOnClickListener(this);
+        mPlaceOrderButton.setOnClickListener(this);
+        mViewOrderButton.setOnClickListener(this);
+        mTableMapButton.setOnClickListener(this);
+        mWaitingListButton.setOnClickListener(this);
+        mEmployeeDirectoryButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick (View v) {
-        if (v == placeOrderButton) {
+        if (v == mPlaceOrderButton) {
             Intent intent = new Intent(MainActivity.this, OrderActivity.class);
             startActivity(intent);
-        } else if (v == viewOrderButton) {
+        } else if (v == mViewOrderButton) {
             Toast.makeText(MainActivity.this, "Feature Coming Soon", Toast.LENGTH_LONG).show();
-        } else if (v == tableMapButton) {
+        } else if (v == mTableMapButton) {
             Toast.makeText(MainActivity.this, "Feature Coming Soon", Toast.LENGTH_LONG).show();
-        } else if (v == waitingListButton) {
+        } else if (v == mWaitingListButton) {
             Toast.makeText(MainActivity.this, "Feature Coming Soon", Toast.LENGTH_LONG).show();
-        } else if (v == employeeDirectoryButton) {
+        } else if (v == mEmployeeDirectoryButton) {
             Toast.makeText(MainActivity.this, "Feature Coming Soon", Toast.LENGTH_LONG).show();
         }
     }
