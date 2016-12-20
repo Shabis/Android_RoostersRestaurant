@@ -7,21 +7,24 @@ import java.util.ArrayList;
  */
 
 public class Order {
-    int id;
+    private String pushId;
     ArrayList<String> items = new ArrayList<>();
 
     public Order() {}
 
     public Order(int id, ArrayList<String> items) {
-        this.id = id;
         this.items = items;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public ArrayList<String> getItems() {
         return items;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
+
+    public String getPushId() {
+        return pushId;
     }
 }
