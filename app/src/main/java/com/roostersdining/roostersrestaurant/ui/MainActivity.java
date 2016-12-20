@@ -3,11 +3,17 @@ package com.roostersdining.roostersrestaurant.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.roostersdining.roostersrestaurant.Constants;
 import com.roostersdining.roostersrestaurant.R;
+
+import java.util.Random;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -37,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == mPlaceOrderButton) {
             Intent intent = new Intent(MainActivity.this, OrderActivity.class);
             startActivity(intent);
+
         } else if (v == mViewOrderButton) {
             Toast.makeText(MainActivity.this, "Feature Coming Soon", Toast.LENGTH_LONG).show();
         } else if (v == mTableMapButton) {
