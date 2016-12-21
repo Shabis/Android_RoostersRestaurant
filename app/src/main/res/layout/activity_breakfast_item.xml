@@ -25,7 +25,6 @@
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="54dp"
         android:layout_below="@+id/logoImageView"
         android:layout_marginTop="25dp">
 

@@ -23,25 +23,10 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="25dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/logoImageView">
-
-        <Button
-            android:text="Poached"
-            android:layout_width="250dp"
-            android:textSize="25dp"
-            android:padding="10dp"
-            android:id="@+id/eggsPoached"
-            android:background="@color/colorAccent"
-            android:textColor="@color/colorLightPrimary"
-            android:layout_height="90dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="68dp"
-            android:layout_marginEnd="68dp" />
+        android:layout_below="@+id/logoImageView"
+        android:layout_marginTop="25dp">
 
         <Button
             android:text="OE"
@@ -52,25 +37,37 @@
             android:textColor="@color/colorLightPrimary"
             android:layout_height="90dp"
             android:padding="10dp"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="65dp"
-            android:layout_marginStart="65dp" />
+            android:layout_alignParentStart="true" />
 
         <Button
-            android:text="OH"
+            android:text="OM"
             android:layout_width="250dp"
+            android:padding="10dp"
             android:textSize="25dp"
-            android:id="@+id/eggsOH"
+            android:layout_marginTop="49dp"
+            android:id="@+id/eggsOM"
             android:background="@color/colorAccent"
             android:textColor="@color/colorLightPrimary"
             android:layout_height="90dp"
+            android:layout_below="@+id/eggsOE"
+            android:layout_alignLeft="@+id/eggsOE"
+            android:layout_alignStart="@+id/eggsOE" />
+
+        <Button
+            android:text="POACHED"
+            android:layout_width="250dp"
+            android:textSize="25dp"
+            android:id="@+id/eggsPoached"
+            android:background="@color/colorAccent"
+            android:textColor="@color/colorLightPrimary"
+            android:layout_height="90dp"
+            android:layout_marginLeft="71dp"
+            android:layout_marginStart="71dp"
             android:padding="10dp"
-            android:layout_marginTop="66dp"
-            android:layout_below="@+id/eggsOM"
-            android:layout_alignLeft="@+id/eggsOM"
-            android:layout_alignStart="@+id/eggsOM" />
+            android:layout_alignTop="@+id/eggsOM"
+            android:layout_toRightOf="@+id/eggsOM"
+            android:layout_toEndOf="@+id/eggsOM" />
 
         <Button
             android:text="SCRAMBLED"
@@ -81,25 +78,23 @@
             android:background="@color/colorAccent"
             android:textColor="@color/colorLightPrimary"
             android:layout_height="90dp"
-            android:layout_below="@+id/eggsPoached"
+            android:layout_alignTop="@+id/eggsOE"
             android:layout_alignLeft="@+id/eggsPoached"
-            android:layout_alignStart="@+id/eggsPoached"
-            android:layout_marginTop="69dp" />
+            android:layout_alignStart="@+id/eggsPoached" />
 
         <Button
-            android:text="OM"
+            android:text="OH"
             android:layout_width="250dp"
-            android:padding="10dp"
             android:textSize="25dp"
-            android:id="@+id/eggsOM"
+            android:padding="10dp"
+            android:id="@+id/eggsOH"
             android:background="@color/colorAccent"
             android:textColor="@color/colorLightPrimary"
             android:layout_height="90dp"
-            android:layout_alignBaseline="@+id/eggsScrambled"
-            android:layout_alignBottom="@+id/eggsScrambled"
-            android:layout_alignLeft="@+id/eggsOE"
-            android:layout_alignStart="@+id/eggsOE" />
-
+            android:layout_below="@+id/eggsOM"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="52dp" />
     </RelativeLayout>
 
 </RelativeLayout>
