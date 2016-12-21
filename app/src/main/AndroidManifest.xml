@@ -18,7 +18,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.OrderActivity" />
-        <activity android:name=".ui.BreakfastItemActivity"></activity>
+        <activity android:name=".ui.BreakfastItemActivity" />
+        <activity android:name=".ui.EggOptionActivity" />
+        <activity android:name=".ui.ToastOptionActivity"></activity>
     </application>
 
 </manifest>

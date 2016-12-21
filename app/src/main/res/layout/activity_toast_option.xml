@@ -2,10 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_breakfast_item"
+    android:id="@+id/activity_toast_option"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.roostersdining.roostersrestaurant.ui.BreakfastItemActivity"
+    tools:context="com.roostersdining.roostersrestaurant.ui.ToastOptionActivity"
     android:background="@color/colorDivider">
 
     <ImageView
@@ -30,10 +30,10 @@
         android:layout_marginTop="25dp">
 
         <Button
-            android:text="THE BARNYARD"
+            android:text="WHOLE WHEAT"
             android:layout_width="250dp"
             android:textSize="25dp"
-            android:id="@+id/theBarnyard"
+            android:id="@+id/toastWW"
             android:background="@color/colorAccent"
             android:textColor="@color/colorLightPrimary"
             android:layout_height="90dp"
@@ -42,60 +42,61 @@
             android:layout_alignParentStart="true" />
 
         <Button
-            android:text="SPINACH AND MUSHROOM"
+            android:text="SOURDOUGH"
             android:layout_width="250dp"
             android:padding="10dp"
             android:textSize="25dp"
             android:layout_marginTop="49dp"
-            android:id="@+id/spinachMushroom"
+            android:id="@+id/toastSD"
             android:background="@color/colorAccent"
             android:textColor="@color/colorLightPrimary"
             android:layout_height="90dp"
-            android:layout_below="@+id/theBarnyard"
-            android:layout_alignLeft="@+id/theBarnyard"
-            android:layout_alignStart="@+id/theBarnyard" />
+            android:layout_below="@+id/toastWW"
+            android:layout_alignLeft="@+id/toastWW"
+            android:layout_alignStart="@+id/toastWW" />
 
         <Button
-            android:text="MEAT AND CHEESE"
+            android:text="WHITE"
             android:layout_width="250dp"
             android:textSize="25dp"
-            android:id="@+id/meatCheese"
+            android:id="@+id/toastWhite"
             android:background="@color/colorAccent"
             android:textColor="@color/colorLightPrimary"
             android:layout_height="90dp"
             android:layout_marginLeft="71dp"
             android:layout_marginStart="71dp"
             android:padding="10dp"
-            android:layout_alignTop="@+id/spinachMushroom"
-            android:layout_toRightOf="@+id/spinachMushroom"
-            android:layout_toEndOf="@+id/spinachMushroom" />
+            android:layout_alignTop="@+id/toastSD"
+            android:layout_toRightOf="@+id/toastSD"
+            android:layout_toEndOf="@+id/toastSD" />
 
         <Button
-            android:text="STEAK AND MUSHROOM"
+            android:text="ENGLISH MUFFIN"
             android:layout_width="250dp"
             android:padding="10dp"
             android:textSize="25dp"
-            android:id="@+id/steakMushroom"
+            android:id="@+id/toastEnglishMuffin"
             android:background="@color/colorAccent"
             android:textColor="@color/colorLightPrimary"
             android:layout_height="90dp"
-            android:layout_alignTop="@+id/theBarnyard"
-            android:layout_alignLeft="@+id/meatCheese"
-            android:layout_alignStart="@+id/meatCheese" />
+            android:layout_alignTop="@+id/toastWW"
+            android:layout_alignLeft="@+id/toastWhite"
+            android:layout_alignStart="@+id/toastWhite" />
 
         <Button
-            android:text="VERA CRUZ"
+            android:text="BISCUIT"
             android:layout_width="250dp"
             android:textSize="25dp"
             android:padding="10dp"
-            android:id="@+id/veraCruz"
+            android:id="@+id/toastBiscuit"
             android:background="@color/colorAccent"
             android:textColor="@color/colorLightPrimary"
             android:layout_height="90dp"
-            android:layout_below="@+id/spinachMushroom"
+            android:layout_below="@+id/toastSD"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="52dp" />
     </RelativeLayout>
 
 </RelativeLayout>
+
