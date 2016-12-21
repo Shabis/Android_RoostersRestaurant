@@ -35,14 +35,6 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_order);
         ButterKnife.bind(this);
 
-        mOrderReference = FirebaseDatabase
-                .getInstance()
-                .getReference()
-                .child(Constants.FIREBASE_CHILD_ORDER);
-
-        mOrderReference.child("server");
-        mOrderReference.child("table");
-
         mBreakfastButton.setOnClickListener(this);
         mLunchButton.setOnClickListener(this);
         mDinnerButton.setOnClickListener(this);
@@ -55,7 +47,9 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
             String tableNumber = mTableNumberEditText.getText().toString();
             DatabaseReference restaurantRef = FirebaseDatabase
                     .getInstance()
-                    .getReference(Constants.FIREBASE_CHILD_ORDER);
+                    .getReference()
+                    .child(Constants.FIREBASE_CHILD_ORDER)
+                    .push();
             restaurantRef.child("server").setValue(serverName);
             restaurantRef.child("table").setValue(tableNumber);
             Intent intent = new Intent(OrderActivity.this, BreakfastItemActivity.class);
@@ -65,10 +59,5 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         } else if (v == mDinnerButton) {
             Toast.makeText(OrderActivity.this, "Feature Coming Soon", Toast.LENGTH_LONG).show();
         }
-    }
-
-
-    public void saveOrderToFirebase(int orderNumber) {
-        mOrderReference.push().setValue(orderNumber);
     }
 }
