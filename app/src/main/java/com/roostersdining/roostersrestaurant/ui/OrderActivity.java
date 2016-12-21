@@ -3,31 +3,70 @@ package com.roostersdining.roostersrestaurant.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.roostersdining.roostersrestaurant.Constants;
 import com.roostersdining.roostersrestaurant.R;
 import com.roostersdining.roostersrestaurant.models.Order;
 
-import butterknife.Bind;
+import java.util.Random;
 
-public class OrderActivity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+public class OrderActivity extends AppCompatActivity implements View.OnClickListener {
     private DatabaseReference mOrderReference;
-    private String mDatabaseSize;
-    @Bind(R.id.orderInfoTextView) TextView mOrderInfoTextView;
+    @Bind(R.id.breakfast) Button mBreakfastButton;
+    @Bind(R.id.lunch) Button mLunchButton;
+    @Bind(R.id.dinner) Button mDinnerButton;
+    @Bind(R.id.serverNameEditText) EditText mServerNameEditText;
+    @Bind(R.id.tableNumberEditText) EditText mTableNumberEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
+        ButterKnife.bind(this);
 
         mOrderReference = FirebaseDatabase
                 .getInstance()
                 .getReference()
-                .child(Constants.FIREBASE_CHILD_ORDER);    }
+                .child(Constants.FIREBASE_CHILD_ORDER);
+
+        mOrderReference.child("server");
+        mOrderReference.child("table");
+
+        mBreakfastButton.setOnClickListener(this);
+        mLunchButton.setOnClickListener(this);
+        mDinnerButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == mBreakfastButton) {
+            String serverName = mServerNameEditText.getText().toString();
+            String tableNumber = mTableNumberEditText.getText().toString();
+            DatabaseReference restaurantRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_ORDER);
+            restaurantRef.child("server").setValue(serverName);
+            restaurantRef.child("table").setValue(tableNumber);
+            Intent intent = new Intent(OrderActivity.this, BreakfastItemActivity.class);
+            startActivity(intent);
+        } else if (v == mLunchButton) {
+            Toast.makeText(OrderActivity.this, "Feature Coming Soon", Toast.LENGTH_LONG).show();
+        } else if (v == mDinnerButton) {
+            Toast.makeText(OrderActivity.this, "Feature Coming Soon", Toast.LENGTH_LONG).show();
+        }
+    }
+
 
     public void saveOrderToFirebase(int orderNumber) {
         mOrderReference.push().setValue(orderNumber);
