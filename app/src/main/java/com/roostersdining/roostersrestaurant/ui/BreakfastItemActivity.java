@@ -53,34 +53,44 @@ public class BreakfastItemActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
         if (v == mTheBarnyardOmelet) {
-//            Order order = (Order) Parcels.unwrap(getIntent().getParcelableExtra("order"));
             Intent intent = new Intent(BreakfastItemActivity.this, EggOptionActivity.class);
             intent.putExtra("server", mServer);
             intent.putExtra("table", mTable);
             intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
             intent.putExtra("item", "The Barnyard");
-//            ArrayList<BreakfastItem> newOrder = new ArrayList<>();
-//            DatabaseReference restaurantRef = FirebaseDatabase
-//                    .getInstance()
-//                    .getReference()
-//                    .child(Constants.FIREBASE_CHILD_ORDER)
-//                    .child("items");
-//
-//            restaurantRef.getParent().child("items").setValue("The Barnyard Omelet");
-
             startActivity(intent);
         }
         if (v == mVeraCruzOmelet) {
-
+            Intent intent = new Intent(BreakfastItemActivity.this, EggOptionActivity.class);
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
+            intent.putExtra("item", "Vera Cruz Omelet");
+            startActivity(intent);
         }
         if (v == mMeatCheeseOmelet) {
-
+            Intent intent = new Intent(BreakfastItemActivity.this, EggOptionActivity.class);
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
+            intent.putExtra("item", "Meat & Cheese Omelet");
+            startActivity(intent);
         }
         if (v == mSpinachMushroomOmelet) {
-
+            Intent intent = new Intent(BreakfastItemActivity.this, EggOptionActivity.class);
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
+            intent.putExtra("item", "Spinach & Mushroom Omelet");
+            startActivity(intent);
         }
         if (v == mSteakMushroomOmelet) {
-
+            Intent intent = new Intent(BreakfastItemActivity.this, EggOptionActivity.class);
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
+            intent.putExtra("item", "Steak & Mushroom Omelet");
+            startActivity(intent);
         }
     }
 }
