@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick (View v) {
         if (v == mPlaceOrderButton) {
-            Intent intent = new Intent(MainActivity.this, OrderActivity.class);
+            Intent intent = new Intent(MainActivity.this, NewOrderActivity.class);
             startActivity(intent);
 
         } else if (v == mViewOrderButton) {

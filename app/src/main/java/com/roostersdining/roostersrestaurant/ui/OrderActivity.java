@@ -10,23 +10,34 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.roostersdining.roostersrestaurant.R;
+import com.roostersdining.roostersrestaurant.models.BreakfastItem;
+
+import org.parceler.Parcels;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class OrderActivity extends AppCompatActivity implements View.OnClickListener {
-    private DatabaseReference mOrderReference;
     @Bind(R.id.breakfast) Button mBreakfastButton;
     @Bind(R.id.lunch) Button mLunchButton;
     @Bind(R.id.dinner) Button mDinnerButton;
-    @Bind(R.id.serverNameEditText) EditText mServerNameEditText;
-    @Bind(R.id.tableNumberEditText) EditText mTableNumberEditText;
+
+    public String mServer;
+    public String mTable;
+    public ArrayList<BreakfastItem> mBreakfastItems = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
         ButterKnife.bind(this);
+
+        Intent intent = getIntent();
+        mServer = intent.getStringExtra("server");
+        mTable = intent.getStringExtra("table");
+        mBreakfastItems = Parcels.unwrap(getIntent().getParcelableExtra("itemArray"));
 
         mBreakfastButton.setOnClickListener(this);
         mLunchButton.setOnClickListener(this);
@@ -36,22 +47,10 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if (v == mBreakfastButton) {
-            String serverName = mServerNameEditText.getText().toString();
-            String tableNumber = mTableNumberEditText.getText().toString();
-//            ArrayList<BreakfastItem> newOrder = new ArrayList<>();
-//            Order order = new Order(serverName, tableNumber, newOrder);
-//
-//            DatabaseReference restaurantRef = FirebaseDatabase
-//                    .getInstance()
-//                    .getReference()
-//                    .child(Constants.FIREBASE_CHILD_ORDER)
-//                    .push();
-//            restaurantRef.child("server").setValue(serverName);
-//            restaurantRef.child("table").setValue(tableNumber);
             Intent intent = new Intent(OrderActivity.this, BreakfastItemActivity.class);
-            intent.putExtra("server", serverName);
-            intent.putExtra("table", tableNumber);
-//            intent.putExtra("order", Parcels.wrap(order));
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
             startActivity(intent);
         } else if (v == mLunchButton) {
             Toast.makeText(OrderActivity.this, "Feature Coming Soon", Toast.LENGTH_LONG).show();

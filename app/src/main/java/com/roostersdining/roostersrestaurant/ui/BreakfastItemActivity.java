@@ -30,6 +30,7 @@ public class BreakfastItemActivity extends AppCompatActivity implements View.OnC
 
     public String mServer;
     public String mTable;
+    public ArrayList<BreakfastItem> mBreakfastItems = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class BreakfastItemActivity extends AppCompatActivity implements View.OnC
         Intent intent = getIntent();
         mServer = intent.getStringExtra("server");
         mTable = intent.getStringExtra("table");
+        mBreakfastItems = Parcels.unwrap(getIntent().getParcelableExtra("itemArray"));
 
         mTheBarnyardOmelet.setOnClickListener(this);
         mVeraCruzOmelet.setOnClickListener(this);
@@ -55,6 +57,7 @@ public class BreakfastItemActivity extends AppCompatActivity implements View.OnC
             Intent intent = new Intent(BreakfastItemActivity.this, EggOptionActivity.class);
             intent.putExtra("server", mServer);
             intent.putExtra("table", mTable);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
             intent.putExtra("item", "The Barnyard");
 //            ArrayList<BreakfastItem> newOrder = new ArrayList<>();
 //            DatabaseReference restaurantRef = FirebaseDatabase

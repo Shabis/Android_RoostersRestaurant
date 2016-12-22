@@ -7,6 +7,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.roostersdining.roostersrestaurant.R;
+import com.roostersdining.roostersrestaurant.models.BreakfastItem;
+
+import org.parceler.Parcels;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -18,6 +23,7 @@ public class ToastOptionActivity extends AppCompatActivity implements View.OnCli
     @Bind(R.id.toastEnglishMuffin) Button mToastEnglishMuffin;
     @Bind(R.id.toastBiscuit) Button mToastBiscuit;
 
+    public ArrayList<BreakfastItem> mBreakfastItems = new ArrayList<>();
     public String mServer;
     public String mTable;
     public String mMenuItem;
@@ -34,12 +40,14 @@ public class ToastOptionActivity extends AppCompatActivity implements View.OnCli
         mTable = intent.getStringExtra("table");
         mMenuItem = intent.getStringExtra("item");
         mEggs = intent.getStringExtra("eggs");
+        mBreakfastItems = Parcels.unwrap(getIntent().getParcelableExtra("itemArray"));
 
         mToastWW.setOnClickListener(this);
         mToastWhite.setOnClickListener(this);
         mToastSD.setOnClickListener(this);
         mToastEnglishMuffin.setOnClickListener(this);
         mToastBiscuit.setOnClickListener(this);
+
     }
 
     @Override
@@ -50,6 +58,7 @@ public class ToastOptionActivity extends AppCompatActivity implements View.OnCli
             intent.putExtra("table", mTable);
             intent.putExtra("item", mMenuItem);
             intent.putExtra("eggs", mEggs);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
             intent.putExtra("toast", "Whole Wheat Toast");
 
             startActivity(intent);

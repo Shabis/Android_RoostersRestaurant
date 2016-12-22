@@ -7,6 +7,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.roostersdining.roostersrestaurant.R;
+import com.roostersdining.roostersrestaurant.models.BreakfastItem;
+
+import org.parceler.Parcels;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -21,6 +26,7 @@ public class EggOptionActivity extends AppCompatActivity implements View.OnClick
     public String mServer;
     public String mTable;
     public String mMenuItem;
+    public ArrayList<BreakfastItem> mBreakfastItems = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,7 @@ public class EggOptionActivity extends AppCompatActivity implements View.OnClick
         mServer = intent.getStringExtra("server");
         mTable = intent.getStringExtra("table");
         mMenuItem = intent.getStringExtra("item");
+        mBreakfastItems = Parcels.unwrap(getIntent().getParcelableExtra("itemArray"));
 
         mEggsOE.setOnClickListener(this);
         mEggsOM.setOnClickListener(this);
@@ -47,6 +54,7 @@ public class EggOptionActivity extends AppCompatActivity implements View.OnClick
             intent.putExtra("server", mServer);
             intent.putExtra("table", mTable);
             intent.putExtra("item", mMenuItem);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
             intent.putExtra("eggs", "OE");
             startActivity(intent);
         }

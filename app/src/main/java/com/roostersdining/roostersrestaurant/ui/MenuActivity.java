@@ -60,7 +60,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MenuActivity.this, OrderActivity.class);
             intent.putExtra("server", mServer);
             intent.putExtra("table", mTable);
-            intent.putExtra("itemArray", mBreakfastItems);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
             startActivity(intent);
         }
         if (v == mFinishOrder) {
