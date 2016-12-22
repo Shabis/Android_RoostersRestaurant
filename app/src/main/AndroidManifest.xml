@@ -21,7 +21,8 @@
         <activity android:name=".ui.BreakfastItemActivity" />
         <activity android:name=".ui.EggOptionActivity" />
         <activity android:name=".ui.ToastOptionActivity" />
-        <activity android:name=".ui.MenuActivity"></activity>
+        <activity android:name=".ui.MenuActivity" />
+        <activity android:name=".ui.OrderCompleteActivity"></activity>
     </application>
 
 </manifest>
