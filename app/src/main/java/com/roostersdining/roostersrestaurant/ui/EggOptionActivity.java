@@ -60,18 +60,38 @@ public class EggOptionActivity extends AppCompatActivity implements View.OnClick
         }
         if (v == mEggsOM) {
             Intent intent = new Intent(EggOptionActivity.this, ToastOptionActivity.class);
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("item", mMenuItem);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
+            intent.putExtra("eggs", "OM");
             startActivity(intent);
         }
         if (v == mEggsOH) {
             Intent intent = new Intent(EggOptionActivity.this, ToastOptionActivity.class);
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("item", mMenuItem);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
+            intent.putExtra("eggs", "OH");
             startActivity(intent);
         }
         if (v == mEggsScrambled) {
             Intent intent = new Intent(EggOptionActivity.this, ToastOptionActivity.class);
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("item", mMenuItem);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
+            intent.putExtra("eggs", "Scrambled");
             startActivity(intent);
         }
         if (v == mEggsPoached) {
             Intent intent = new Intent(EggOptionActivity.this, ToastOptionActivity.class);
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("item", mMenuItem);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
+            intent.putExtra("eggs", "Poached");
             startActivity(intent);
         }
     }
