@@ -47,7 +47,7 @@ public class EggOptionActivity extends AppCompatActivity implements View.OnClick
             intent.putExtra("server", mServer);
             intent.putExtra("table", mTable);
             intent.putExtra("item", mMenuItem);
-            intent.putExtra("egg", "OE");
+            intent.putExtra("eggs", "OE");
             startActivity(intent);
         }
         if (v == mEggsOM) {
