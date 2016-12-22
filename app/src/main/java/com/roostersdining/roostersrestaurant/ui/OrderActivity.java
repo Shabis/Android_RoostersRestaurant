@@ -14,8 +14,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.roostersdining.roostersrestaurant.Constants;
 import com.roostersdining.roostersrestaurant.R;
+import com.roostersdining.roostersrestaurant.models.BreakfastItem;
 import com.roostersdining.roostersrestaurant.models.Order;
 
+import org.parceler.Parcels;
+
+import java.util.ArrayList;
 import java.util.Random;
 
 import butterknife.Bind;
@@ -45,14 +49,20 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         if (v == mBreakfastButton) {
             String serverName = mServerNameEditText.getText().toString();
             String tableNumber = mTableNumberEditText.getText().toString();
-            DatabaseReference restaurantRef = FirebaseDatabase
-                    .getInstance()
-                    .getReference()
-                    .child(Constants.FIREBASE_CHILD_ORDER)
-                    .push();
-            restaurantRef.child("server").setValue(serverName);
-            restaurantRef.child("table").setValue(tableNumber);
+//            ArrayList<BreakfastItem> newOrder = new ArrayList<>();
+//            Order order = new Order(serverName, tableNumber, newOrder);
+//
+//            DatabaseReference restaurantRef = FirebaseDatabase
+//                    .getInstance()
+//                    .getReference()
+//                    .child(Constants.FIREBASE_CHILD_ORDER)
+//                    .push();
+//            restaurantRef.child("server").setValue(serverName);
+//            restaurantRef.child("table").setValue(tableNumber);
             Intent intent = new Intent(OrderActivity.this, BreakfastItemActivity.class);
+            intent.putExtra("server", serverName);
+            intent.putExtra("table", tableNumber);
+//            intent.putExtra("order", Parcels.wrap(order));
             startActivity(intent);
         } else if (v == mLunchButton) {
             Toast.makeText(OrderActivity.this, "Feature Coming Soon", Toast.LENGTH_LONG).show();

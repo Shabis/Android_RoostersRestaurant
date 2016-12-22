@@ -1,23 +1,21 @@
 package com.roostersdining.roostersrestaurant.models;
 
-import com.google.firebase.database.FirebaseDatabase;
-import com.roostersdining.roostersrestaurant.Constants;
-
+import org.parceler.Parcel;
 import java.util.ArrayList;
 
 /**
  * Created by Shelby Clayton on 12/19/2016.
  */
-
+@Parcel
 public class Order {
     String table;
     String server;
     private String pushId;
-    ArrayList<String> items = new ArrayList<>();
+    ArrayList<BreakfastItem> items = new ArrayList<>();
 
     public Order() {}
 
-    public Order(String table, String server, ArrayList<String> items) {
+    public Order(String table, String server, ArrayList<BreakfastItem> items) {
         this.table = table;
         this.server = server;
         this.items = items;
@@ -31,7 +29,7 @@ public class Order {
         return server;
     }
 
-    public ArrayList<String> getItems() {
+    public ArrayList<BreakfastItem> getItems() {
         return items;
     }
 
