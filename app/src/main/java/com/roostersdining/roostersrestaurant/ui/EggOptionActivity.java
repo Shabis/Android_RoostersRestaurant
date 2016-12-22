@@ -18,11 +18,20 @@ public class EggOptionActivity extends AppCompatActivity implements View.OnClick
     @Bind(R.id.eggsScrambled) Button mEggsScrambled;
     @Bind(R.id.eggsPoached) Button mEggsPoached;
 
+    public String mServer;
+    public String mTable;
+    public String mMenuItem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_egg_option);
         ButterKnife.bind(this);
+
+        Intent intent = getIntent();
+        mServer = intent.getStringExtra("server");
+        mTable = intent.getStringExtra("table");
+        mMenuItem = intent.getStringExtra("item");
 
         mEggsOE.setOnClickListener(this);
         mEggsOM.setOnClickListener(this);
@@ -35,6 +44,10 @@ public class EggOptionActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         if (v == mEggsOE) {
             Intent intent = new Intent(EggOptionActivity.this, ToastOptionActivity.class);
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("item", mMenuItem);
+            intent.putExtra("egg", "OE");
             startActivity(intent);
         }
         if (v == mEggsOM) {
