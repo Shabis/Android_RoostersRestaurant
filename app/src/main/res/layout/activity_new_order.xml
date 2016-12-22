@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_new_order"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.roostersdining.roostersrestaurant.ui.NewOrderActivity"
+    android:background="@color/colorDivider">
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:id="@+id/serverNameEditText"
+        android:layout_alignBottom="@+id/serverNameTextView"
+        android:layout_toRightOf="@+id/serverNameTextView"
+        android:layout_marginLeft="52dp"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        android:layout_marginStart="52dp"
+        android:background="@color/colorTextIcons"
+        android:layout_alignTop="@+id/serverNameTextView"
+        android:gravity="center"
+        android:layout_below="@+id/logoImageView"
+        android:layout_width="250dp" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:id="@+id/tableNumberEditText"
+        android:layout_alignBottom="@+id/orderInfoTextView"
+        android:layout_toRightOf="@+id/orderInfoTextView"
+        android:layout_marginLeft="52dp"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        android:layout_marginStart="52dp"
+        android:background="@color/colorTextIcons"
+        android:layout_alignTop="@+id/orderInfoTextView"
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_below="@+id/logoImageView"/>
+
+    <TextView
+        android:text="Table # "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        android:layout_marginTop="320dp"
+        android:id="@+id/orderInfoTextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="223dp"
+        android:layout_marginStart="223dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        app:srcCompat="@drawable/fulllogo"
+        android:id="@+id/logoImageView"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="150dp" />
+
+    <TextView
+        android:text="Server Name "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        android:layout_marginTop="33dp"
+        android:id="@+id/serverNameTextView"
+        android:layout_below="@+id/logoImageView"
+        android:layout_toLeftOf="@+id/tableNumberEditText"
+        android:layout_toStartOf="@+id/tableNumberEditText" />
+
+    <Button
+        android:text="ENTER"
+        android:layout_width="wrap_content"
+        android:textSize="25dp"
+        android:layout_below="@+id/orderInfoTextView"
+        android:layout_alignLeft="@+id/orderInfoTextView"
+        android:layout_alignStart="@+id/orderInfoTextView"
+        android:layout_marginTop="92dp"
+        android:id="@+id/enterButton"
+        android:layout_alignRight="@+id/tableNumberEditText"
+        android:layout_alignEnd="@+id/tableNumberEditText"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorLightPrimary"
+        android:layout_height="90dp" />
+</RelativeLayout>

@@ -22,7 +22,8 @@
         <activity android:name=".ui.EggOptionActivity" />
         <activity android:name=".ui.ToastOptionActivity" />
         <activity android:name=".ui.MenuActivity" />
-        <activity android:name=".ui.OrderCompleteActivity"></activity>
+        <activity android:name=".ui.OrderCompleteActivity" />
+        <activity android:name=".ui.NewOrderActivity"></activity>
     </application>
 
 </manifest>
