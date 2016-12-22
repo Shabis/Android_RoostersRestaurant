@@ -60,21 +60,47 @@ public class ToastOptionActivity extends AppCompatActivity implements View.OnCli
             intent.putExtra("eggs", mEggs);
             intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
             intent.putExtra("toast", "Whole Wheat Toast");
-
             startActivity(intent);
-
         }
         if (v == mToastWhite) {
-
+            Intent intent = new Intent(ToastOptionActivity.this, MenuActivity.class);
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("item", mMenuItem);
+            intent.putExtra("eggs", mEggs);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
+            intent.putExtra("toast", "White Toast");
+            startActivity(intent);
         }
         if (v == mToastSD) {
-
+            Intent intent = new Intent(ToastOptionActivity.this, MenuActivity.class);
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("item", mMenuItem);
+            intent.putExtra("eggs", mEggs);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
+            intent.putExtra("toast", "Sourdough Toast");
+            startActivity(intent);
         }
         if (v == mToastEnglishMuffin) {
-
+            Intent intent = new Intent(ToastOptionActivity.this, MenuActivity.class);
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("item", mMenuItem);
+            intent.putExtra("eggs", mEggs);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
+            intent.putExtra("toast", "English Muffin");
+            startActivity(intent);
         }
         if (v == mToastBiscuit) {
-
+            Intent intent = new Intent(ToastOptionActivity.this, MenuActivity.class);
+            intent.putExtra("server", mServer);
+            intent.putExtra("table", mTable);
+            intent.putExtra("item", mMenuItem);
+            intent.putExtra("eggs", mEggs);
+            intent.putExtra("itemArray", Parcels.wrap(mBreakfastItems));
+            intent.putExtra("toast", "Biscuit");
+            startActivity(intent);
         }
     }
 }
